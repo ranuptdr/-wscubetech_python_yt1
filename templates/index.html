@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Home Page</title>
+        <title>{{title}}</title> <!commit line {views.py file me Dictionary m jo titel he vo dena h} -->
         <style>
             .main{
                 width: 1000px;
@@ -12,6 +12,23 @@
         </style>
     </head>
     <body>
-        <div class="main"> Welcome to Wscubetech | Jrn</div>
+        <div class="main"> {{bdata}}</div>
+        {% for n in clist %}
+        <div>{{forloop.counter0}} {{n}}</div>
+        {% endfor %}
     </body>
+    <table border="1" cellpadding ="10">
+        <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+        </tr>
+
+        {% for d in student_details %}
+            <tr>
+                <td>{{ d.name }}</td>
+                <td>{{ d.phone }}</td>
+            </tr>
+        {% endfor %}
+
+    </table>
 </html>
